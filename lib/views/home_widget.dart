@@ -7,6 +7,7 @@ class HomeWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
         centerTitle: true,
         title: RichText(
           text: TextSpan(
@@ -31,18 +32,16 @@ class HomeWidget extends StatelessWidget {
           ),
         ),
       ),
-     
+
       body: SingleChildScrollView(
         child: Column(
           children: [
             // Horizontal scrolling news section
             Container(
-              height: 200,
               child: ListView.builder(
-              scrollDirection: Axis.horizontal,
+                scrollDirection: Axis.horizontal,
 
-        ////////////////// add image ///////////
-
+                ////////////////// add image ///////////
                 itemCount: 5, // Replace with actual news count
                 itemBuilder: (context, index) {
                   return Container(
@@ -51,12 +50,14 @@ class HomeWidget extends StatelessWidget {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
                       image: DecorationImage(
-                        image: NetworkImage('https://picsum.photos/300/200?random=$index'),
+                        image: NetworkImage(
+                          'https://picsum.photos/300/200?random=$index',
+                        ),
                         fit: BoxFit.cover,
                       ),
                     ),
 
-/////////////////////////// gradient  /////////////////
+                    /////////////////////////// gradient  /////////////////
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
@@ -70,7 +71,7 @@ class HomeWidget extends StatelessWidget {
                         ),
                       ),
 
-                  ////////text////////////////
+                      ////////text////////////////
                       child: Center(
                         child: Padding(
                           padding: const EdgeInsets.all(16.0),
@@ -90,7 +91,7 @@ class HomeWidget extends StatelessWidget {
                 },
               ),
             ),
-        ////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////
             // Vertical scrolling content
             ListView.builder(
               shrinkWrap: true,
@@ -101,7 +102,9 @@ class HomeWidget extends StatelessWidget {
                   margin: EdgeInsets.all(8),
                   child: ListTile(
                     leading: CircleAvatar(
-                      backgroundImage: NetworkImage('https://picsum.photos/50/50?random=$index'),
+                      backgroundImage: NetworkImage(
+                        'https://picsum.photos/50/50?random=$index',
+                      ),
                     ),
                     title: Text('Content Title ${index + 1}'),
                     subtitle: Text('Content description goes here...'),
