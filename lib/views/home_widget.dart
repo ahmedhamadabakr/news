@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news/widgets/category_card.dart';
 
 class HomeWidget extends StatelessWidget {
   const HomeWidget({super.key});
@@ -36,61 +37,17 @@ class HomeWidget extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // Horizontal scrolling news section
-            Container(
+            SizedBox(
+              height: 200,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-
-                ////////////////// add image ///////////
                 itemCount: 5, // Replace with actual news count
                 itemBuilder: (context, index) {
-                  return Container(
-                    width: 300,
-                    margin: EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                      image: DecorationImage(
-                        image: NetworkImage(
-                          'https://picsum.photos/300/200?random=$index',
-                        ),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-
-                    /////////////////////////// gradient  /////////////////
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                        gradient: LinearGradient(
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                          colors: [
-                            Colors.transparent,
-                            Colors.black.withOpacity(0.7),
-                          ],
-                        ),
-                      ),
-
-                      ////////text////////////////
-                      child: Center(
-                        child: Padding(
-                          padding: const EdgeInsets.all(16.0),
-                          child: Text(
-                            'News Title ${index + 1}',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      ),
-                    ),
-                  );
+                  return CategoryCard(index: index);
                 },
               ),
             ),
+
             ////////////////////////////////////////////////////////////
             // Vertical scrolling content
             ListView.builder(
