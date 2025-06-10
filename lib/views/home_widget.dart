@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news/widgets/category_card.dart';
+import 'package:news/widgets/categoriseList_view.dart';
 
 class HomeWidget extends StatelessWidget {
   const HomeWidget({super.key});
@@ -37,16 +37,7 @@ class HomeWidget extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(
-              height: 200,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: 5, // Replace with actual news count
-                itemBuilder: (context, index) {
-                  return CategoryCard(index: index);
-                },
-              ),
-            ),
+            CategoriesListView(),
 
             ////////////////////////////////////////////////////////////
             // Vertical scrolling content

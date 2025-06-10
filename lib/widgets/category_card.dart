@@ -5,6 +5,7 @@ class CategoryCard extends StatelessWidget {
   final int? index;
   @override
   Widget build(BuildContext context) {
+
     return Container(
       width: 300,
       margin: EdgeInsets.all(8),
