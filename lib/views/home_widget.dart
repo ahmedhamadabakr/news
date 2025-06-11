@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:news/widgets/categoriseList_view.dart';
+import 'package:news/widgets/categoriselist_view.dart';
+import 'package:news/widgets/news_tile.dart';
+import 'package:news/widgets/tilelist_view.dart';
 
 class HomeWidget extends StatelessWidget {
   const HomeWidget({super.key});
@@ -35,32 +37,33 @@ class HomeWidget extends StatelessWidget {
       ),
 
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            CategoriesListView(),
-
-            ////////////////////////////////////////////////////////////
-            // Vertical scrolling content
-            ListView.builder(
-              shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              itemCount: 10, // Replace with actual content count
-              itemBuilder: (context, index) {
-                return Card(
-                  margin: EdgeInsets.all(8),
-                  child: ListTile(
-                    leading: CircleAvatar(
-                      backgroundImage: NetworkImage(
-                        'https://picsum.photos/50/50?random=$index',
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            children: [
+              const CategoriesListView(),
+              const TilelistView(),
+              /*  ListView.builder(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                itemCount: 10, // Replace with actual content count
+                itemBuilder: (context, index) {
+                  return Card(
+                    margin: EdgeInsets.all(8),
+                    child: ListTile(
+                      leading: CircleAvatar(
+                        backgroundImage: NetworkImage(
+                          'https://picsum.photos/50/50?random=$index',
+                        ),
                       ),
+                      title: Text('Content Title ${index + 1}'),
+                      subtitle: Text('Content description goes here...'),
                     ),
-                    title: Text('Content Title ${index + 1}'),
-                    subtitle: Text('Content description goes here...'),
-                  ),
-                );
-              },
-            ),
-          ],
+                  );
+                },
+              ), */
+            ],
+          ),
         ),
       ),
     );

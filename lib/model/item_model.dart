@@ -1,6 +1,6 @@
 class ItemModel {
-  final String? image;
-  final String? titleNews;
+  final String image;
+  final String titleNews;
 
-  const ItemModel({this.image, this.titleNews});
+  const ItemModel({required this.image, required this.titleNews});
 }
