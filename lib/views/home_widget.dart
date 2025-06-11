@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news/widgets/categoriselist_view.dart';
-import 'package:news/widgets/news_tile.dart';
+
 import 'package:news/widgets/tilelist_view.dart';
 
 class HomeWidget extends StatelessWidget {
@@ -37,12 +37,15 @@ class HomeWidget extends StatelessWidget {
       ),
 
       body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
+
         child: Padding(
           padding: const EdgeInsets.all(16),
           child: Column(
             children: [
               const CategoriesListView(),
               const TilelistView(),
+
               /*  ListView.builder(
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),

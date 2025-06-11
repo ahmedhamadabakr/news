@@ -7,7 +7,8 @@ class TilelistView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      physics: const BouncingScrollPhysics(),
+      physics: NeverScrollableScrollPhysics(),
+
       shrinkWrap: true,
       itemCount: 10,
       itemBuilder: (context, index) {
