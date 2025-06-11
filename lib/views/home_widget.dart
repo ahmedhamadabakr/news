@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:news/widgets/categoriselist_view.dart';
-import 'package:news/widgets/news_tile.dart';
 import 'package:news/widgets/tilelist_view.dart';
 
 class HomeWidget extends StatelessWidget {
