@@ -6,17 +6,10 @@ class TilelistView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      physics: NeverScrollableScrollPhysics(),
-
-      shrinkWrap: true,
-      itemCount: 10,
-      itemBuilder: (context, index) {
-        return Padding(
-          padding: const EdgeInsets.only(top: 16),
-          child: NewsTile(),
-        );
-      },
+    return SliverList(
+      delegate: SliverChildBuilderDelegate(childCount: 10, (context, index) {
+        return NewsTile();
+      }),
     );
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news/widgets/categoriselist_view.dart';
-
+import 'package:news/widgets/news_tile.dart';
 import 'package:news/widgets/tilelist_view.dart';
 
 class HomeWidget extends StatelessWidget {
@@ -36,37 +36,16 @@ class HomeWidget extends StatelessWidget {
         ),
       ),
 
-      body: SingleChildScrollView(
-        physics: const BouncingScrollPhysics(),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: CustomScrollView(
+          physics: const BouncingScrollPhysics(),
 
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            children: [
-              const CategoriesListView(),
-              const TilelistView(),
-
-              /*  ListView.builder(
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                itemCount: 10, // Replace with actual content count
-                itemBuilder: (context, index) {
-                  return Card(
-                    margin: EdgeInsets.all(8),
-                    child: ListTile(
-                      leading: CircleAvatar(
-                        backgroundImage: NetworkImage(
-                          'https://picsum.photos/50/50?random=$index',
-                        ),
-                      ),
-                      title: Text('Content Title ${index + 1}'),
-                      subtitle: Text('Content description goes here...'),
-                    ),
-                  );
-                },
-              ), */
-            ],
-          ),
+          slivers: [
+            SliverToBoxAdapter(child: const CategoriesListView()),
+            SliverToBoxAdapter(child: SizedBox(height: 32)),
+            TilelistView(),
+          ],
         ),
       ),
     );
