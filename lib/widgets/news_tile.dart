@@ -28,11 +28,11 @@ class NewsTile extends StatelessWidget {
               color: Colors.black87,
               fontSize: 20,
               fontWeight: FontWeight.w500,
-            ),
+            ),  
           ),
-          SizedBox(height: 8),
+
           Text(
-            "this the second text where added",
+            "this the second text where addedsdfsfwefwefwefwefewfwefwefwefwefwfwef",
             style: TextStyle(
               color: Colors.grey,
               overflow: TextOverflow.ellipsis,
