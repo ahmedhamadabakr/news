@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:news/model/article_model.dart';
 import 'package:news/services/news_servce.dart';
 import 'package:news/widgets/news_tile.dart';
+import 'package:shimmer/shimmer.dart';
 
 class TilelistView extends StatefulWidget {
   const TilelistView({super.key});
@@ -12,7 +13,7 @@ class TilelistView extends StatefulWidget {
 
 class _TilelistViewState extends State<TilelistView> {
   List<ArticleModel> articles = [];
-
+  bool isLoading = true;
   @override
   void initState() {
     super.initState();
@@ -21,20 +22,38 @@ class _TilelistViewState extends State<TilelistView> {
 
   Future<void> getGeneralNews() async {
     articles = await NewsServce().getNews();
-    setState(() {});
-    print(articles);
+    isLoading = false;
+    setState(() {}); //up date data in articles list
   }
 
   @override
   Widget build(BuildContext context) {
     //call evry time run
-    return SliverList(
-      delegate: SliverChildBuilderDelegate(childCount: articles.length, (
-        context,
-        index,
-      ) {
-        return NewsTile(articleModel: articles[index]);
-      }),
-    );
+    return isLoading
+        ? SliverList(
+          delegate: SliverChildBuilderDelegate(
+            (context, index) => Padding(
+              padding: EdgeInsets.all(16),
+              child: Shimmer.fromColors(
+                baseColor: Colors.grey[300]!,
+                highlightColor: Colors.grey[100]!,
+                child: Container(
+                  height: 100,
+                  width: double.infinity,
+                  color: Colors.black,
+                ),
+              ),
+            ),
+            childCount: 5,
+          ),
+        )
+        : SliverList(
+          delegate: SliverChildBuilderDelegate(childCount: articles.length, (
+            context,
+            index,
+          ) {
+            return NewsTile(articleModel: articles[index]);
+          }),
+        );
   }
 }
