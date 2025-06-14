@@ -42,7 +42,7 @@ class HomeWidget extends StatelessWidget {
 
           slivers: [
             SliverToBoxAdapter(child: const CategoriesListView()),
-            SliverToBoxAdapter(child: SizedBox(height: 32)),
+            SliverToBoxAdapter(child:const SizedBox(height: 32)),
             TilelistView(),
           ],
         ),
