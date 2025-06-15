@@ -23,7 +23,10 @@ class CategoriesListView extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: categoris.length, // Replace with actual news count
         itemBuilder: (context, index) {
-          return CategoryCard(category: categoris[index]);
+          return CategoryCard(
+            category: categoris[index],
+           
+          );
         },
       ),
     );

@@ -17,7 +17,7 @@ class _NewsListviewBilderState extends State<NewsListviewBilder> {
   @override
   void initState() {
     super.initState();
-    future = NewsServce().getNews();
+    future = NewsServce().getTopHeadlines(category: 'general');
   }
 
   @override
