@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class Errorview extends StatelessWidget {
   const Errorview({super.key, required this.textError});
 
-  final textError;
+  final String textError;
 
   @override
   Widget build(BuildContext context) {
