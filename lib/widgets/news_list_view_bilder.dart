@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:news/error/error.dart';
 import 'package:news/model/article_model.dart';
@@ -6,7 +7,9 @@ import 'package:news/views/loading_view.dart';
 import 'package:news/widgets/tilelist_view.dart';
 
 class NewsListviewBilder extends StatefulWidget {
-  const NewsListviewBilder({super.key});
+  const NewsListviewBilder({super.key, required this.category});
+
+  final String category;
 
   @override
   State<NewsListviewBilder> createState() => _NewsListviewBilderState();
@@ -17,7 +20,7 @@ class _NewsListviewBilderState extends State<NewsListviewBilder> {
   @override
   void initState() {
     super.initState();
-    future = NewsServce().getTopHeadlines(category: 'general');
+    future = NewsServce().getTopHeadlines(category: widget.category);
   }
 
   @override
