@@ -7,7 +7,7 @@ class CategoriesListView extends StatelessWidget {
 
   final List<ItemModel> categoris = const [
     ItemModel(image: "assets/business.avif", titleNews: "Business"),
-    ItemModel(image: "assets/entertaiment.avif", titleNews: "Entertaiment"),
+    ItemModel(image: "assets/entertaiment.avif", titleNews: "entertainment"),
     ItemModel(image: "assets/general.avif", titleNews: "general"),
     ItemModel(image: "assets/health.avif", titleNews: "Health"),
     ItemModel(image: "assets/science.avif", titleNews: "Science"),
@@ -23,10 +23,7 @@ class CategoriesListView extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: categoris.length, // Replace with actual news count
         itemBuilder: (context, index) {
-          return CategoryCard(
-            category: categoris[index],
-           
-          );
+          return CategoryCard(category: categoris[index]);
         },
       ),
     );
