@@ -11,6 +11,7 @@ class HomeWidget extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         centerTitle: true,
+        // To display text containing multiple styles
         title: RichText(
           text: TextSpan(
             children: [
@@ -37,8 +38,13 @@ class HomeWidget extends StatelessWidget {
 
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
+        
         child: CustomScrollView(
+
+          //physics => to control scroling 
+          //BouncingScrollPhysics => Make the scroll bar jump when you reach the end or beginning of the list.
           physics: const BouncingScrollPhysics(),
+          
           slivers: [
             SliverToBoxAdapter(child: const CategoriesListView()),
             SliverToBoxAdapter(child: const SizedBox(height: 32)),

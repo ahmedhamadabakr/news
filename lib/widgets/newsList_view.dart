@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:news/model/article_model.dart';
 
-class NewslistView extends StatelessWidget {
-  const NewslistView({super.key, required this.articleModel});
+class NewsView extends StatelessWidget {
+  const NewsView({super.key, required this.articleModel});
 
   final ArticleModel articleModel;
 

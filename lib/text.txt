@@ -1,0 +1,14 @@
+main 
+    home => app baner 
+         => CustomScrollView
+            => SliverToBoxAdapter 
+               => CategoriesListView 
+                  [=> ItemModel]
+                  =>  CategoryCard
+                     =>  CategoryView 
+                        =>  NewsListviewBilder
+                           =>  NewsServce
+                              =>  getTopHeadlines 
+                           =>  TilelistViewState   
+                              [=> ArticleModel]
+                              

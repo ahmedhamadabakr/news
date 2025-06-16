@@ -15,7 +15,7 @@ class TilelistViewState extends StatelessWidget {
         context,
         index,
       ) {
-        return NewslistView(articleModel: articles[index]);
+        return NewsView(articleModel: articles[index]);
       }),
     );
   }

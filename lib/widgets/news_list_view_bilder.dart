@@ -3,7 +3,7 @@ import 'package:news/error/error.dart';
 import 'package:news/model/article_model.dart';
 import 'package:news/services/news_servce.dart';
 import 'package:news/views/loading_view.dart';
-import 'package:news/widgets/tilelist_view.dart';
+import 'package:news/widgets/news_view.dart';
 
 class NewsListviewBilder extends StatefulWidget {
   const NewsListviewBilder({super.key, required this.category});
@@ -16,6 +16,7 @@ class NewsListviewBilder extends StatefulWidget {
 
 class _NewsListviewBilderState extends State<NewsListviewBilder> {
   var future;
+
   @override
   void initState() {
     super.initState();
